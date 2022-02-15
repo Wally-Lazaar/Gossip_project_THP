@@ -1,7 +1,6 @@
 class GossipsController < ApplicationController
   def show
-    @gossip.times do
-      erb :show, locals: {id: params['id'].to_i, gossips: Gossip.find(params['id'].to_i)}
-    end
+    @gossips = Gossip.all
+    @id = params[:id]
   end
 end

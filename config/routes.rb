@@ -4,8 +4,10 @@
   # root "articles#index"
 
 Rails.application.routes.draw do
-  get '/welcome', to: 'static_pages#home'
-  get 'welcome/:id', to: 'gossips#show', as: 'gossip'
+  get '/welcome(/:name)', to: 'static_pages#home'
+  get '(/:name)/potin/:id', to: 'gossips#show', as: 'gossip'
+  get '/team', to: 'static_pages#team'
+  get '/contact', to: 'static_pages#contact'
   
 
 end

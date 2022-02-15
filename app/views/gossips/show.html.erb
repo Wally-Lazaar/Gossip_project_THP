@@ -4,15 +4,17 @@
   </head>
     <body>
     <h1>PAGE POTIN !</h1>
-    <%= gossips.each do |gossip| %>
+    <% @gossips.each do |gossip| %>
+    <% if gossip.id == @id.to_i%>
       <p>
-        <h2> Voici le potin n° <%= id%></h2>
-        <b><h3> Son auteur :</h3></b><%= gossip.author %> <br/>
+        <h2> Voici le potin n° <%= @id%></h2>
+        <b><h3> Son auteur :</h3></b><%= gossip.title %> <br/>
         <b><h3> Le contenu du potin :</h3></b> <%= gossip.content %> <br/></br>
         ------------------------------------------------------------------</br>
-        Clique <a href="<%= id%>/edit">ici</a> pour modifier ce potin.
+        Clique <a href="<%= @id%>/edit">ici</a> pour modifier ce potin.
       </p>
-    <%= end %>
+    <% end %>
+    <% end %>
     <p>Clique <a href="/">ici</a> pour revenir à la page des potins.</p>
     </body>
 </html>
